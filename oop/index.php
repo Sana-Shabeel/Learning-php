@@ -1,27 +1,18 @@
 <?php
-
+declare(strict_types=1);
 include 'includes/autoloader.inc.php';
 
 
 
 $object = new Person("John", "blue", 28);
 
-  echo $object->name;
-  
-  echo "<br>";
-  $object->setName("John Doe");
-  
-  echo $object->name;
-  
-  echo "<br>";
-  
-  echo Person::$drinkingAge;
-  
-  echo "<br>";
-  
-  Person::setDrinkingAge(18);
-  
-  echo Person::$drinkingAge;
+ 
+try {
+   
+    echo  $object->setName(7896);
+} catch (TypeError $e) {
+    echo "Error!: " . $e->getMessage();
+}
   
   
 
@@ -33,7 +24,7 @@ $counter2 = new Counter();
 $counter3 = new Counter();
 
 // Accessing the static property
-echo Counter::$count;  // Output: 3
+ echo Counter::$count;  // Output: 3
   
 
 ?>
