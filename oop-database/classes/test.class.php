@@ -3,7 +3,7 @@
 
 class Test extends Dbh
 {
-    public function getMeals()
+    public function getPosts()
     {
         $table_name = "php_docker_table";
         $query = "SELECT * FROM $table_name";
