@@ -22,8 +22,9 @@ include "includes/class-autoloader.inc.php";
     
     
     $testObj = new Test();
-    $testObj->getPosts();
     
+    $testObj->getPostsStmt(1);
+    // $testObj->getPosts();
         
      
     ?>
