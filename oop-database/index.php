@@ -22,7 +22,7 @@ include "includes/class-autoloader.inc.php";
     
     
     $testObj = new Test();
-    $testObj->getMeals();
+    $testObj->getPosts();
     
         
      
