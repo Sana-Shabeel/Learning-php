@@ -27,6 +27,9 @@ include "includes/class-autoloader.inc.php";
     
       echo "FETCH ALL POSTS: <br>";
       $testObj->getPosts();
+      
+      echo "INSERT NEW POST: <br>";
+      $testObj->setPostStmt("New Post", "This is a new post", "2021-05-05");
         
      
     ?>
