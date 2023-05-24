@@ -18,7 +18,6 @@ class Test extends Dbh
             echo "<p>".$row['date_created']."</p>";
             echo "<hr>";        }
             
-        // $stmt->close();
     }
     
     
@@ -30,21 +29,23 @@ class Test extends Dbh
         
         $table_name = "php_docker_table";
         $query = "SELECT * FROM $table_name WHERE id = ?;";
+        
+        // save the connection to a variable
         $conn = $this->connect();
         $stmt = $conn->prepare($query);
         
         //  $stmt->execute([$param_id]);
         $stmt->bind_param("s", $param_id);
-         var_dump($conn);
+        //  var_dump($conn);
         $stmt->execute();     
-        // $result = $stmt->get_result();
+        $result = $stmt->get_result();
         
-        // foreach ($result as $row) {
-        //     echo "<p>".$row['title']."</p>";
-        //     echo "<p>".$row['body']."</p>";
-        //     echo "<p>".$row['date_created']."</p>";
-        //     echo "<hr>";
-        // }
+        foreach ($result as $row) {
+            echo "<p>".$row['title']."</p>";
+            echo "<p>".$row['body']."</p>";
+            echo "<p>".$row['date_created']."</p>";
+            echo "<hr>";
+        }
      
     }
   
