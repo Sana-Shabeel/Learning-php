@@ -12,4 +12,14 @@ class UserView extends Users
             echo "<hr>";
         }
     }
+    
+    public function showUser($first_name)
+    {
+        $datas = $this->getUser($first_name);
+        foreach ($datas as $data) {
+            echo "Fullname: " . $data['first_name'] . " " . $data["last_name"] . " " . "<br>";
+            echo "Date of Birth: " . $data['dob'] . "<br>";
+            echo "<hr>";
+        }
+    }
 }

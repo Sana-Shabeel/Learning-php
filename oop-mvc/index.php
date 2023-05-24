@@ -19,13 +19,18 @@
         $usersObj = new UserView();
         $usersObj->showAllUsers();
         
-        echo "<br>";
-        echo "<h4>Insert new user</h4>";
+        // echo "<br>";
+        // echo "<h4>Insert new user</h4>";
         $usersObj = new UserController();
         // $usersObj->createUser("John", "Doe", "1980-01-01");
-        echo "<br>";
-        echo "User created successfully!"
+        // echo "<br>";
+        // echo "User created successfully!";
         
+        
+        echo "<br>";
+        echo "<h4>Show user Anas</h4>";
+        $usersObj = new UserView();
+        $usersObj->showUser("Anas");
     ?>
     
 </body>
