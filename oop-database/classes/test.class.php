@@ -16,17 +16,13 @@ class Test extends Dbh
             echo "<p>".$row['title']."</p>";
             echo "<p>".$row['body']."</p>";
             echo "<p>".$row['date_created']."</p>";
-            echo "<hr>";        }
+            echo "<hr>";        
+        }
             
     }
     
-    
-    
-    
-    
     public function getPostsStmt(int $param_id)
-    {
-        
+    { 
         $table_name = "php_docker_table";
         $query = "SELECT * FROM $table_name WHERE id = ?;";
         
@@ -48,6 +44,19 @@ class Test extends Dbh
         }
      
     }
-  
- 
+    
+    public function setPostStmt($title, $body, $date_created)
+    {
+        $table_name = "php_docker_table";
+        $query = "INSERT INTO $table_name (title, body, date_created) VALUES (?, ?, ?);";
+        
+        $conn = $this->connect();
+        $stmt = $conn->prepare($query);
+        
+        $stmt->bind_param("sss", $title, $body, $date_created);
+        $stmt->execute();
+        
+        echo "New record created successfully";
+    }
+    
 }
