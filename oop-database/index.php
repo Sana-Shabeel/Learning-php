@@ -23,8 +23,10 @@ include "includes/class-autoloader.inc.php";
     
     $testObj = new Test();
     
-    $testObj->getPostsStmt(1);
-    // $testObj->getPosts();
+    $testObj->getPostsStmt(2);
+    
+      echo "FETCH ALL POSTS: <br>";
+      $testObj->getPosts();
         
      
     ?>
